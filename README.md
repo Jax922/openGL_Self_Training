@@ -10,5 +10,6 @@
 ![e73d597b274fed0798c3a1056a17412](https://user-images.githubusercontent.com/7382116/218145116-b816eb1b-7483-434d-9689-b59817f39e96.png)
 ![d9bc57a5617ba65d8d64d0218c69926](https://user-images.githubusercontent.com/7382116/218145143-e2156eee-6dd3-47ab-b0ff-65117ca30233.png)
 - Transform
+translate, rotate, scale
 ![image](https://user-images.githubusercontent.com/7382116/218255557-767df680-b10e-45be-85f1-1a55be69349e.png)
 
