@@ -18,7 +18,7 @@ public:
 	glm::vec3 Direction;
 	glm::vec3 Right;
 	glm::vec3 Up;
-	glm::vec3 Worldup;
+	glm::vec3 WorldUp;
 	float Pitch;
 	float Yaw;
 

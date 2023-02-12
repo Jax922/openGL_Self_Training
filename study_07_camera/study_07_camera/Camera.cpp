@@ -3,7 +3,7 @@
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 
-Camera::Camera(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp) : Position(position), Worldup(worldUp)
+Camera::Camera(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp) : Position(position), WorldUp(worldUp)
 {
 	Direction = glm::normalize(position - target);
 	Right = glm::normalize(glm::cross(worldUp, Direction));
@@ -13,7 +13,7 @@ Camera::Camera(glm::vec3 position, glm::vec3 target, glm::vec3 worldUp) : Positi
 }
 
 Camera::Camera(glm::vec3 position, glm::vec3 worldUp, float pitch, float yaw) 
-	: Position(position), Worldup(worldUp), Pitch(pitch), Yaw(yaw)
+	: Position(position), WorldUp(worldUp), Pitch(pitch), Yaw(yaw)
 {
 	
 	/*Direction.x = cos(glm::radians(pitch)) * cos(glm::radians(yaw));
@@ -23,16 +23,19 @@ Camera::Camera(glm::vec3 position, glm::vec3 worldUp, float pitch, float yaw)
 
 	Right = glm::normalize(glm::cross(Direction, worldUp));
 	Up = glm::normalize(glm::cross(Right, Direction));*/
+	Yaw = yaw;
+	Pitch = pitch;
+	WorldUp = worldUp;
 	glm::vec3 front;
 	front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
 	front.y = sin(glm::radians(Pitch));
 	front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
 	front = glm::normalize(front);
 	// also re-calculate the Right and Up vector
-	Right = glm::normalize(glm::cross(front, Worldup));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+	Right = glm::normalize(glm::cross(front, WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
 	Up = glm::normalize(glm::cross(Right, front));
 
-	ViewMatrix = glm::lookAt(Position, Position + front, Up);
+	ViewMatrix = glm::lookAt(Position, Position+front, Up);
 
 }
 
@@ -47,8 +50,8 @@ void Camera::ProcessMouseMove(double deltaX, double deltaY)
 	front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
 	front = glm::normalize(front);
 	// also re-calculate the Right and Up vector
-	Right = glm::normalize(glm::cross(front, Worldup));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
+	Right = glm::normalize(glm::cross(front, WorldUp));  // normalize the vectors, because their length gets closer to 0 the more you look up or down which results in slower movement.
 	Up = glm::normalize(glm::cross(Right, front));
 
-	ViewMatrix = glm::lookAt(Position, Position + front, Up);
+	ViewMatrix = glm::lookAt(Position, Position+front, Up);
 }

@@ -9,16 +9,21 @@
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <gtc/type_ptr.hpp>
+#include <gtx/string_cast.hpp>
 
 #include "Camera.h"
 
 // camera
-glm::vec3 cameraPos = glm::vec3(0.0f, -1.0f, 5.0f);
+glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 targetPos = glm::vec3(0.0f, 0.0f, -4.0f);
 glm::vec3 worldUp = glm::vec3(0.0f, 1.0f, 0.0f);
-Camera camera = { cameraPos, worldUp, 523.0f, 101.0f };
+//Camera camera = { cameraPos, worldUp, 523.0f, 101.0f };
+Camera camera = { cameraPos, worldUp, 0.0f, -90.0f };
+
+float fov = 45.0f;
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+void scroll_callback(GLFWwindow* window, double xpos, double ypos);
 bool firstMove = true;
 
 // vertex data point
@@ -86,6 +91,7 @@ int main() {
 	glfwMakeContextCurrent(window);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 	// Init GLEW
 	glewExperimental = true;
 	if (glewInit() != GLEW_OK)
@@ -143,10 +149,14 @@ int main() {
 	//glm::vec3 targetPos = { 0.0f, 0.0f, 0.0f };
 	//glm::vec3 worldUp = { 0.0f, 1.0f, 0.0f };
 
-	projection = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f);
-	shaders.SetValue("projection", projection);
+	//shaders.SetValue("view", glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f)));
+	std::cout << "camera pos::" << glm::to_string(camera.GetViewMatrix()) << std::endl;
+	std::cout << "view pos::" << glm::to_string(glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f))) << std::endl;
+	
 
-	model = glm::rotate(model, 55.0f, glm::vec3(0.0f, 1.0f, 1.0f));
+	
+
+	model = glm::rotate(model, 55.0f, glm::vec3(0.5f, 1.0f, 0.0f));
 
 	shaders.SetValue("model", model);
 
@@ -166,6 +176,8 @@ int main() {
 
 		
 		shaders.SetValue("view", camera.GetViewMatrix());
+		projection = glm::perspective(glm::radians(fov), (float)800 / (float)600, 0.1f, 100.0f);
+		shaders.SetValue("projection", projection);
 
 
 		glBindVertexArray(VAO);
@@ -221,4 +233,14 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos)
 
 
 	std::cout << "posX = " << lastX <<",,," << lastY << std::endl;
+}
+
+void scroll_callback(GLFWwindow* window, double xpos, double ypos)
+{
+	std::cout << "scoll_callback" << std::endl;
+	fov -= (float)ypos;
+	if (fov < 1.0f)
+		fov = 1.0f;
+	if (fov > 45.0f)
+		fov = 45.0f;
 }
