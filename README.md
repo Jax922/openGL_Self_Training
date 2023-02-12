@@ -18,3 +18,4 @@ translate, rotate, scale
 ![image](https://github.com/Jax922/openGL_Self_Training/blob/master/study_07_camera/study_07_camera/camera.gif)
 -Lighting(Color)
 ![image](https://user-images.githubusercontent.com/7382116/218305964-7f567d48-e7ee-4423-8d13-2341a0b5a4a5.png)
+![image](https://user-images.githubusercontent.com/7382116/218306136-a8c26111-ec1a-47d8-a703-a78db4921520.png)
