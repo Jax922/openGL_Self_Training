@@ -15,4 +15,4 @@ translate, rotate, scale
 - Coordinate System
 ![image](https://user-images.githubusercontent.com/7382116/218270964-a8fea05d-8c0d-4c08-bcb1-f9e89f5f23f1.png)
 - Camera
-![image](https://user-images.githubusercontent.com/7382116/218281464-5a829ca1-e059-4a74-bcac-2cd911adda16.png)
+![image](https://github.com/Jax922/openGL_Self_Training/blob/master/study_07_camera/study_07_camera/camera.gif)
