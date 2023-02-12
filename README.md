@@ -15,4 +15,7 @@ translate, rotate, scale
 - Coordinate System
 ![image](https://user-images.githubusercontent.com/7382116/218270964-a8fea05d-8c0d-4c08-bcb1-f9e89f5f23f1.png)
 - Camera
-![image](https://user-images.githubusercontent.com/7382116/218281464-5a829ca1-e059-4a74-bcac-2cd911adda16.png)
+![image](https://github.com/Jax922/openGL_Self_Training/blob/master/study_07_camera/study_07_camera/camera.gif)
+-Lighting(Color)
+![image](https://user-images.githubusercontent.com/7382116/218305964-7f567d48-e7ee-4423-8d13-2341a0b5a4a5.png)
+![image](https://user-images.githubusercontent.com/7382116/218306136-a8c26111-ec1a-47d8-a703-a78db4921520.png)
