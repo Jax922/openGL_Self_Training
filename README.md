@@ -24,3 +24,5 @@ translate, rotate, scale
 ![image](https://user-images.githubusercontent.com/7382116/218313010-f8860b0a-702e-4dda-878e-32f433865463.png)
 -- Ambient + diffuse
 ![image](https://user-images.githubusercontent.com/7382116/218316317-25aa352c-c9bf-4e38-9d42-fc24835c2308.png)
+-- Ambient + diffuse + specular
+![image](https://user-images.githubusercontent.com/7382116/218317977-c0bfb1fb-ba07-428f-b210-6ffecdaf956e.png)
