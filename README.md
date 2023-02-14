@@ -19,3 +19,10 @@ translate, rotate, scale
 -Lighting(Color)
 ![image](https://user-images.githubusercontent.com/7382116/218305964-7f567d48-e7ee-4423-8d13-2341a0b5a4a5.png)
 ![image](https://user-images.githubusercontent.com/7382116/218306136-a8c26111-ec1a-47d8-a703-a78db4921520.png)
+- Phong Lighting
+-- Ambient lighting
+![image](https://user-images.githubusercontent.com/7382116/218313010-f8860b0a-702e-4dda-878e-32f433865463.png)
+-- Ambient + diffuse
+![image](https://user-images.githubusercontent.com/7382116/218316317-25aa352c-c9bf-4e38-9d42-fc24835c2308.png)
+-- Ambient + diffuse + specular
+![image](https://user-images.githubusercontent.com/7382116/218317977-c0bfb1fb-ba07-428f-b210-6ffecdaf956e.png)
